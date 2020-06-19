@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Post</title>
+</head>
+<body>
+<script>
+    'use strict';
+
+    function Post(author, text, date) {       // создаём функцию-конструктор (шаблон) для создания объектов типа Post
+        // с орпеделенными данными и поведением (методы)
+        this.author = author;           // this-ключевое слово имени(перем-ной) того объекта, который будет использовать эту ф-ю
+                                        // this помогает избежать дублирования кода
+        this.text = text;               // author,text и date - свойства объекта
+        this.date = date;
+    }
+
+    Post.prototype.edit = function (text) {            // добавляем в прототип объектов типа Post метод edit
+        this.text = text;
+    };
+
+    const post1 = new Post('John', 'Hey-ho! Wazzzuup!?', new Date());   // Создаем объект типа Post с именем post1
+                                                                        // и его параметрами-данными
+    console.log(post1);        // выведется объект со свойствами author: John, text: Hey-ho! Wazzzuup!? и датой
+
+    post1.edit("I'm fine! How are you doing?");  // обратимся к методу edit чтобы отредактировать данные в свойстве text
+    console.log(post1);   // выведется объект со свойствами author: John, text: Hey-ho! I'm fine! How are you doing? и датой
+
+
+    function AttachedPost(author, text, date) {     // создаём конструктор для создания объектов типа AttachedPost
+        Post.call(this, author, text, date);        //внутри которого определяется (call) "хозяин" метода Post (???)
+                                                    // и перенимаются его свойства (имя объекта, author, text, date)
+        this.highlighted = false;                   // дописывается свойство highlighted, значение по умолчанию false
+    }
+
+    AttachedPost.prototype = Object.create(Post.prototype);  // в прототип объектов типа AttachedPost записывается пустой объект,
+    // у которого в прототипе находится прототип объектов типа Post
+    //  %%%)  ЭТА СТРОКА, НА САМОМ ДЕЛЕ ТАК РАСШИФРОВЫВАЕТСЯ ИЛИ Я ПЕРЕГНУЛА?
+    AttachedPost.prototype.constructor = AttachedPost;  // а в свойство constructor прототипа метода AttachedPost
+                                                        // записывается метод AttachedPost с его свойствами
+                                                        // (эээ..а зачем? там ведь и так все это есть после предыдущей строки)
+                                                        // Игорь, помогите, тону(((
+
+    AttachedPost.prototype.makeTextHighlighted = function () { // в прототип объектов типа AttachedPost записывается
+        this.highlighted = true; // метод makeTextHighlighted, который меняет значение свойства highlighted на true
+    };
+
+    const attached1 = new AttachedPost('Malkovich', 'Happy for you', new Date()); // создается объект attached1 типа AttachedPost
+    //у которого помимо свойств как у объекта Post есть свойство highlighted со значением false
+    console.log(attached1);
+
+    attached1.makeTextHighlighted(); //метод makeTextHighlighted из прототипа объектов типа AttachedPost
+                                     // меняет свойство highlighted  на true
+
+    attached1.edit('See ya');       //метод edit из прототипа attached1 объектов типа Post (который есть также
+                                    // в прототипе объектов типа AttachedPost ) передаёт новое значение в свойство text
+    console.log(attached1);
+
+
+</script>
+
+</body>
+</html>

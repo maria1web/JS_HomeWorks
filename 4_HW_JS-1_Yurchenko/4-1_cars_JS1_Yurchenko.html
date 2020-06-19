@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Number into Digits</title>
+</head>
+<body>
+<script>
+    'use strict';
+    function Car(model, color) {                    // создаём функцию конструктор (шаблон объекта) типа Car
+        this.model = model;
+        this.color = color;
+
+        Car.prototype.showColor = function ()        // записываем в прототип объекта Car метод showColor
+        {alert( this.model +"'s color is " + this.color)};
+
+        Car.prototype.move = function ()        // записываем в прототип объекта Car метод move
+        {alert( this.model + this.color + " color rides up the North" )};
+
+        Car.prototype.changeColor = function (color)        // записываем в прототип объекта Car метод changeColor
+        {alert( this.model +"'s color is " + this.color + " now")};
+
+
+        const car1 = new Car('Subaru', 'blue');
+        const car2 = new Car('Rangerover', 'white');
+
+        car1.showColor();      // выведет: Subaru's color is blue
+        car2.showColor();      // выведет: Rangerover's color is white
+
+        car1.move();      // выведет: Subaru blue color rides up the North
+        car2.move();      // выведет: Rangerover white color rides up the North
+
+        car1.showColor('red');      // выведет: Subaru's color is red now
+        car2.showColor('green');      // выведет: Rangerover's color is green now
+    }
+
+
+</script>
+</body>
+</html>

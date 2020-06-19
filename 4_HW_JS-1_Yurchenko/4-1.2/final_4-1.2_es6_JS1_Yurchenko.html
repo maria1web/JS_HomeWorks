@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        'use strict';
+
+        class Post {            // создаётся 'класс' Post, который включает в себя шаблон объектов и прототип их методов
+            constructor(author, text, date) {   // создаём конструктор
+                this.author = author;
+                this.text = text;
+                this.date = date;
+            }
+
+            edit(text) {                        // добавляем в его прототип метод edit
+                this.text = text;
+            }
+        }
+                                                                          // создаём объект post1
+        const post1 = new Post('John', 'Hey-ho! Wazzzuup!?', new Date()); // передаём аргументы в свойства готового объекта
+        console.log(post1);
+        post1.edit("I'm fine! How are you doing?");  // вызываем метод из прототипа и меняем значение свойства text
+        console.log(post1);
+
+
+        class AttachedPost extends Post {  // создаётся 'класс' AttachedPost,
+            // который расширяет св-ва 'класса' Post тем, что:
+            constructor(author, text, date) {   //конструктор с параметрами (author, text, date)
+                super(author, text, date);      //помимо унаследованных прототипом свойств (author, text, date)
+                this.highlighted = false;       // дополнен методом highlighted, по умолчанию значение false
+            }
+
+            makeTextHighlighted() {             // и прототип этого 'класса' добавлен метод makeTextHighlighted,
+                this.highlighted = true;        // который меняет значение св-ва highlighted на true
+            }
+        }
+
+        const attached1 = new AttachedPost('Malkovich', 'Happy for you', new Date()); //создаём новый объект attached1
+        console.log(attached1); // помимо св-в объектов типа Post выводится св-во highlighted со знач-ем false
+
+        attached1.makeTextHighlighted(); // применяем метод makeTextHighlighted из прототипа AttachedPost,
+        // чтобы поменять значение свойства highlighted на true
+
+        attached1.edit('See ya'); // применяем метод edit из прототипа Post,
+        // (который также находится в прототипе объектов типа AttachedPost), чтобы поменять значение свойства text
+
+        console.log(attached1); // выведется объект author: Malkovich, text: See ya, дата: ..., highlighted: true
+    </script>
+</body>
+
+</html>

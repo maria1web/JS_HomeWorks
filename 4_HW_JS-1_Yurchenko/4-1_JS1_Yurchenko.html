@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Number into Digits</title>
+</head>
+<body>
+<script>
+    'use strict';
+
+    function getDigitsOfNumber(num) {
+        if (!Number.isInteger(num) || num < 0 || num > 999) {    // если число не целое или отрицательное или > 999
+            console.log('Число должно быть целым от 0 до 999');
+            return {};                                          // возвращаем пустой объект
+        }
+        return {                               //если все в порядке, возвращаем объект со свойствами:
+            hundereds: Math.floor(num / 100),  // hundreds-сотни (округляем до целых число, полученное от деления на 100)
+
+            tens: Math.floor(num / 10) % 10,   // tens - десятки (округляем до целых полученное 2-значное число
+                                               // берем его остаток от деления на 10 )
+            units: num % 10,                   // units - единицы (то, что останется от деления на 10)
+
+        };
+    }
+    let randomNumber = Math.floor(Math.random() * 1000);    // получаем случайное целое число от 0 до 999
+    console.log(getDigitsOfNumber(randomNumber));           // выводим объект (разложенное число в консоль),
+                                                            // запуская функцию преобразующую число
+</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Product</title>
+</head>
+<body>
+
+<script>
+    'use strict';
+    function Product(name, price) {     // создаём шаблон объекта типа Product
+        this.name = name;               // определяем его свойства
+        this.price = price;
+    }
+    Product.prototype.make25PercDiscount = function () {     //записываем в прототип метод
+        this.price = this.price - (this.price * 25 / 100);   //который уменьшает цену на 25% в случае скидки
+        };
+
+        const fruit1 = new Product('Груши', 180);          //создаем объект с именем fruit1 и данными
+        fruit1.make25PercDiscount();                       // применяем скидку, вызывая метод из прототипа объекта
+
+        console.log(fruit1);        // выведется объект Product  в поле name: Груши, в поле price 135
+                                    // в прототипе этого объекта - ссылка на метод make25PercDiscount
+</script>
+
+</body>
+</html>
