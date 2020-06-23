@@ -1,0 +1,55 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.product {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 300px;
+    padding: 10px;
+    border: 2px solid seagreen;
+    border-radius: 7px;
+}
+
+.productName {
+    color: seagreen;
+}
+
+.item-img {
+    display: block;
+}
+
+.btn-details {
+    margin-top: 15px;
+    display: block;
+    width: 150px;
+    height: 50px;
+    border-radius: 7px;
+    background: seagreen;
+    font-size: 20px;
+    color: lavender;
+    cursor: pointer;
+    transition: 0.5s;
+    box-shadow: 0 0 20px seagreen;
+    outline: none;
+}
+
+.product:hover {
+    border: 2px solid rebeccapurple;
+    transition: 0.5s;
+    box-shadow: 0 0 40px rebeccapurple;
+}
+
+.btn-details:hover {
+    background: purple;
+    box-shadow: 0 0 40px rebeccapurple;
+}
+
+.product:hover .productName {
+     color: purple;
+     transition: 0.5s;
+ }

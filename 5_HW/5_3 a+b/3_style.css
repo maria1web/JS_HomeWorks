@@ -1,0 +1,67 @@
+.modal {
+
+    width: 300px;
+    padding: 10px;
+    background-color: lavender;
+    position: fixed;
+    top: 30%;
+    left: 37%;
+    box-shadow: 0 0 50px rebeccapurple;
+    border-radius: 5px;
+}
+
+
+.btn-position {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 150px;
+}
+
+.show-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+    height: 50px;
+    border-radius: 7px;
+    background: seagreen;
+    font-size: 20px;
+    color: lavender;
+    cursor: pointer;
+    transition: 0.5s;
+    box-shadow: 0 0 20px seagreen;
+    outline: none;
+}
+
+.show-btn:hover {
+    background: purple;
+    box-shadow: 0 0 40px rebeccapurple;
+}
+
+.close {
+    position: absolute;
+    right: -15px;
+    top: -15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 7px;
+    background: purple;
+    font-size: 30px;
+    color: lavender;
+    cursor: pointer;
+    transition: 0.5s;
+    box-shadow: 0 0 10px rebeccapurple;
+}
+
+.close:hover {
+    background: seagreen;
+    box-shadow: 0 0 10px seagreen;
+}
+
+.hidden {
+    display: none;
+}
