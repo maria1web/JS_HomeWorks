@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Slider</title>
+    <link rel="stylesheet" href="lightGallery-master/dist/css/lightgallery.min.css">  <!-- 1 -->
+    <link rel="stylesheet" href="styles/style.css">                 <!-- 5 -->
+</head>
+<body>
+
+    <div id="lightgallery">                      <!-- 3 -->
+        <a href="https://placeimg.com/640/480/animals">
+            <img class="thumbnail" src="https://placeimg.com/640/480/animals">
+        </a>
+        <a href="https://placeimg.com/640/480/nature">
+            <img class="thumbnail" src="https://placeimg.com/640/480/nature">
+        </a>
+        <a href="https://placeimg.com/640/480/tech">
+            <img class="thumbnail" src="https://placeimg.com/640/480/tech">
+        </a>
+    </div>
+
+
+    <script src="lightGallery-master/dist/js/lightgallery.min.js"></script>    <!-- 2 -->
+
+    <script type="text/javascript">                 // 4
+    $(document).ready(function () {
+        $("#lightgallery").lightGallery();
+    });
+    </script>
+
+
+</body>
+</html>

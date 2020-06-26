@@ -1,0 +1,12 @@
+.thumbnail{
+    width: 200px;
+}
+
+.slider {
+    display: flex;
+
+}
+
+#lightgallery > a {
+    text-decoration: none;
+}
