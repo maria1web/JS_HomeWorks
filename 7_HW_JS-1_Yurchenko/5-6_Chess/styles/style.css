@@ -1,0 +1,40 @@
+/*for board*/
+
+table {
+    border-collapse: collapse;
+}
+
+td {
+    width: 40px;
+    height: 40px;
+    border: 1px solid black;
+    text-align: center;
+}
+
+.white {
+    background: rgba(255, 202, 131, 0.55);
+}
+
+.black {
+    background: #6a4300;
+}
+
+tr:last-child td:first-child {
+    border-left: none;
+    border-bottom: none;
+}
+
+/*for figures*/
+
+.whiteFigure {
+    color: white;
+}
+
+.blackFigure {
+    color: black;
+}
+
+i {
+    font-size: 24px;
+    text-shadow: 0 0 3px grey;
+}
