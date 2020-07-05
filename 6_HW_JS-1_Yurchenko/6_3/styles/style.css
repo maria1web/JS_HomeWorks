@@ -1,0 +1,23 @@
+.bucketPanel {
+    width: 400px;
+    padding: 10px;
+}
+
+.col-4 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.te_xt {
+    font-size: 20px;
+    line-height: 30px;
+    color: crimson;
+    font-weight: bold;
+    margin: 10px;
+}
+
+.productRemoveBtn:hover {
+    cursor: pointer;
+}

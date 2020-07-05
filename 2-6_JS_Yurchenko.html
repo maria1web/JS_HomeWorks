@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    'use strict';
+
+    let deposit = +prompt('Введите сумму вклада в рублях:');
+
+    if (isNaN(deposit)) {
+        alert("Нажмите F5 и вводите, пожалуйста, сумму вклада только цифрами");
+    } else if (deposit <= 0) {
+        alert("Сумма вклада должна быть больше 0\n\nНажмите F5");
+    } else {
+        deposit = String(deposit);
+        let strLength = deposit.length;
+        let lastLetter = deposit.charAt(strLength - 1);
+
+        let ending;
+        if (lastLetter == '1')
+            ending = 'ь';
+
+        else if (lastLetter == '2' || lastLetter == '3' || lastLetter == '4')
+            ending = 'я';
+
+        else
+            ending = 'ей';
+
+        alert('Ваша сумма в ' + deposit + ' рубл' + ending + ' успешно зачислена');
+    }
+
+    /*
+    с логическим "ИЛИ" оператор SWITCH отказался работать  =(((
+
+                switch (lastLetter) {
+                case '1':
+                    alert('Ваша сумма в ' + deposit + ' рубль успешно зачислена');
+                    break;
+                case '2' || '3' || '4':
+
+                    alert('Ваша сумма в ' + deposit + ' рубля успешно зачислена');
+                    break;
+                case '5' || '6' || '7' || '8' || '9' || '0':
+                    alert('Ваша сумма в ' + deposit + ' рублей успешно зачислена');
+                    break;
+            }
+        }
+    */
+</script>
+
+</body>
+</html>

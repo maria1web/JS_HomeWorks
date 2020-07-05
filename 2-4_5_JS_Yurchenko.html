@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    'use strict';
+
+    let num1 = +Math.floor((Math.random() * 100));
+    let num2 = +Math.floor((Math.random() * 100));
+    let sum, diff, mult, div, oper;
+
+    function getSum(a, b) {
+        let plus = a + b;
+        return (plus);
+    }
+
+    function getDifference(a, b) {
+        let minus = a - b;
+        return (minus);
+    }
+
+    function getMult(a, b) {
+        let mlt = a * b;
+        return (mlt);
+    }
+
+    function getDivision(a, b) {
+        let dvsn = (a / b).toFixed(2);
+        return (dvsn);
+    }
+
+    /*
+                ОКОНЧАНИЕ 4-ГО ЗАДАНИЯ:
+   sum = getSum(num1, num2);
+   diff = getDifference(num1, num2);
+   mult = getMult(num1, num2);
+   div = getDivision(num1, num2);
+
+   alert('Сумма случайных чисел ' + num1 + ' и ' + num2 + ' равна ' + sum + '\n\nИх разность равна ' + diff +
+         '\n\nПроизведение:  ' + mult + '\n\nА результатом деления будет ' + div)
+
+
+               ЗАДАНИЕ № 5:
+   */
+
+    function mathOperation(arg1, arg2, operation) {
+
+        switch (operation){
+            case 'сумма':
+                sum =    getSum(arg1, arg2);
+                alert('Сумма случайных чисел ' + arg1 + ' и ' + arg2 + ' равна ' + sum);
+                break;
+            case 'разность':
+                diff =getDifference(arg1, arg2);
+                alert('Разность случайных чисел ' + arg1 + ' и ' + arg2 + ' равна ' + diff);
+                break;
+            case 'произведение':
+                mult = getMult(arg1, num2);
+                alert('Произведение случайных чисел ' + arg1 + ' и ' + arg2 + ' равно ' + mult);
+                break;
+            case 'деление':
+                div = getDivision(arg1, arg2);
+                alert('Результатом деления случайных чисел ' + arg1 + ' и ' + arg2 + ' будет ' + div);
+                break;
+            default:
+                alert("Нажмите F5 и выберите операцию из предложенного списка");
+                break;
+
+
+        }
+    }
+
+     oper = (prompt ('Введите название операции: сумма, разность, проиведение, деление')).toLowerCase();
+     mathOperation(num1, num2, oper);
+
+
+
+</script>
+
+</body>
+</html>

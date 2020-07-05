@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        'use strict';
+
+        class Post {
+            constructor(author, text) {
+                this.author = author;
+                this.text = text;
+                this.show =  function () {
+                    alert (this.author + ' says: '+ this.text + '!');
+                }
+            }
+        }
+
+        const post1 = new Post('Admin', 'я - суперадмин');
+        post1.show();   // появится сообщение: Admin says: я - суперадмин
+
+        console.log(post1.author);    // Admin
+        console.log(post1.text);      // я - суперадмин
+
+        const post2 = new Post('User', 'я - суперюзер');  // появится сообщение: User says: я - суперюзер
+        post2.show();
+
+        console.log(post2.author);      // User
+        console.log(post2.text);        // я - суперюзер
+    </script>
+</body>
+
+</html>

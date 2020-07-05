@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    'use strict';
+
+    let a = +prompt('Введите число а \n\nа - любое целое число от -100 до 100');
+    let b = +prompt('Теперь по тому же принципу ведите число b');
+
+    if (a >= 0 && b >= 0) {
+        let diff = a - b;
+        alert ('Разность чисел а и b будет равна ' + diff);
+    }
+    else if (a < 0 && b < 0) {
+        let mult = a*b;
+        alert ('Произведение чисел а и b равно ' + mult);
+    }
+    else if ((Math.sign(a) >= 0 && Math.sign(b) < 0) || (Math.sign(b) >= 0 && Math.sign(a) < 0)) {
+        let sum = a+b;
+        alert ('Сумма чисел а и b равна ' + sum);
+    }
+
+</script>
+
+</body>
+</html>
